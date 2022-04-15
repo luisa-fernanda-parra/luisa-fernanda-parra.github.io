@@ -1,0 +1,504 @@
+/* ESTILOS GLOBALES */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 10px;
+    /* ¿Por qué el profesor utiliza mediads absolutas y no relativas? 
+    Se estableción así por practicidad, porque es más fácil calcular las medidas con múltiplos de 10.
+    Si en los elementos hijos del body utilizamos rem para medir, nos basaremos en esos 10px*/
+    /* realmente las unidades de medida rem se calculan respecto al elemento raíz que es la etiqueta 
+    HTML así que establecí aquí el font-size */
+    /* width: 100vw; */
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center; 
+    /* Lo ponemos centrado porque primero vamos a diseñar para celulares, luego, utilizando
+    media-queris podemos cambiar esto para pantallas más grandes */
+    overflow-x: hidden;
+    max-width: 1200px;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    /* esta propiedad sirve para quitarle la decoración que pueda traer el texto por 
+    defecto, en este caso nos sirve para quitarle el subrayado a las etiquetas de enlace*/
+    color: black;
+}
+
+img{
+    max-width: 50vw;
+    box-sizing: border-box;
+    /* esta propiedad la puse yo */
+}
+
+p{
+    line-height: 2rem;
+    font-size: 1.3rem;
+}
+
+h1, h2, .lista-habilidades{
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.boton{
+    padding: 10px 30px;
+    font-size: 1.3rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 30px;
+    color: black;
+    transition: background-color 0.3s ease-in-out, color 0.5s ease-in-out;
+}
+
+.boton:hover{
+    color: white;
+    background-color: black;
+}
+
+figcaption{
+    margin-top: 10px;
+}
+
+
+/* SECCIÓN DEL HEADER */
+
+header{
+    height: 100vh;
+}
+
+nav{
+    background-color: #d7ecf5;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 3.5rem;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0 10px;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+nav ul li:hover{
+    font-weight: bold;
+}
+
+nav ul{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.9rem 0.5rem 0.5rem;
+}
+
+.foto-hdv{
+    width: 30%;
+    /* box-shadow: 1px 2px 30px rgba(0, 0, 0, 0.2); */
+    margin-top: 30px;
+}
+
+.foto-y-perfil{
+    position: relative;
+    top: 35px;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-position-y: -180px;
+}
+
+#perfil-profesional{
+    margin-top: 1.5rem;
+}
+
+#perfil-profesional p{
+    width: 80vw;
+    margin: 0.7rem auto 0;
+}
+
+
+/* SECCIÓN LISTA DE HABILIDADES */
+
+.lista-habilidades{
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.lista-habilidades ul{
+    text-align: center;
+    font-size: 2.3rem;
+    line-height: 3.8rem;
+}
+
+
+/* SECCIÓN DE PROYECTOS RECIENTES */
+
+.proyectos-recientes-titulo{
+    width: 80vw;
+    margin: 0 auto 2rem;
+    border-bottom: 1px solid rgb(63, 63, 63);
+}
+
+.proyectos-recientes p{
+    width: 90vw;
+    margin: 2rem auto 0;
+}
+
+.fondo-azul{
+    background-color: #d7ecf5;
+}
+
+.proyecto .boton{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.proyecto{
+    padding: 2rem 0 2rem;
+}
+
+
+/* SECCIÓN FOOTER */
+
+footer{
+    margin: 3rem auto;
+}
+
+
+
+@media (min-width: 700px){
+
+    body{
+        margin: 0;
+        width: 100vw;
+    }
+
+    .contenedor{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    /* SECCIÓN DEL HEADER */
+
+    header{
+        width: 100vw;
+        height: 90vh;
+    }
+
+    nav{
+        width: 100vw;
+        height: 7.5rem;
+    }
+
+    nav ul{
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    nav ul li{
+        font-size: 1.4rem;
+    }
+
+    .foto-y-perfil{
+        width: 100vw;
+        flex-direction: row-reverse;
+        top: 75px;
+        height: fit-content;
+    }
+
+    #perfil-profesional p{
+        width: 50vw;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    #perfil-profesional h1{
+        font-size: 4rem;
+    }
+
+    #contenedor-foto-hdv img{
+        width: 100%;
+        max-width: 30vw;
+        margin: 30px auto 0 0;
+    }
+
+    #contenedor-foto-hdv figure{
+        width: 35vw;
+        margin: 10vh 0;
+    }
+
+    #contenedor-foto-hdv{
+        flex: 40vw;
+    }
+
+    #perfil-profesional{
+        flex: 60vw;
+    }
+
+
+    /* SECCIÓN LISTA DE HABILIDADES */
+
+    .lista-habilidades{
+        margin-top: 0;
+        margin-bottom: 75px;
+    }
+
+
+    /* SECCIÓN DE PROYECTOS RECIENTES */
+
+    .proyectos-recientes{
+        width: 100vw;
+    }
+
+    .proyectos-recientes-titulo{
+        width: 95vw;
+    }
+
+    .al-reves{
+        flex-direction: row-reverse;
+    }
+
+    .proyecto-imagen img{
+        width: 35vw;
+    }
+
+    .proyecto-descripcion, .proyecto-imagen{
+        width: 40vw;
+    }
+
+    .proyecto-descripcion h2{
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .proyecto-descripcion p{
+        width: fit-content;
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+        margin-top: 0;
+    }
+
+    .alineamiento-derecha{
+        text-align: right;
+    }
+
+    .alineamiento-izquierda{
+        text-align: left;
+    }
+
+    .boton.alineamiento-izquierda{
+        display: block;
+        width:fit-content;
+        margin: 20px auto 20px 0;
+        
+    }
+
+    .boton.alineamiento-derecha{
+        display: block;
+        width: fit-content;
+        margin: 20px 0 20px auto;
+    }
+
+    .contenedor.proyecto{
+        justify-content: space-evenly;
+        padding: 50px 0;
+    }
+
+
+    /* SECCIÓN FOOTER */
+
+    footer h2{
+        font-size: 3.5rem;
+        font-weight: lighter;
+    }
+}
+
+
+
+@media (min-width: 1000px){
+
+    body{
+        margin: 0;
+        width: 100vw;
+    }
+
+    .contenedor{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .boton{
+        font-size: 1.6rem;
+    }
+
+    /* SECCIÓN DEL HEADER */
+    
+    header{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    nav{
+        height: 7.5rem;
+    }
+
+    nav ul{
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+
+    nav ul li{
+        font-size: 1.4rem;
+    }
+
+    .foto-y-perfil{
+        flex-direction: row-reverse;
+        top: 75px;
+        background-repeat: repeat-x;
+        height: fit-content;
+    }
+
+    #contenedor-foto-hdv{
+        flex: 40vw;
+        margin-top: 40px;
+        margin-right: 5vw;
+    }
+
+    #contenedor-foto-hdv img{
+        width: 80%;
+        max-width: 25vw;
+    }
+
+    #perfil-profesional{
+        flex: 60vw;
+        margin-top: 4vw;
+        margin-left: 5vw;
+    }
+
+    #perfil-profesional h1{
+        font-size: 5rem;
+        line-height: 6.5rem;
+        margin-top: 10px;
+    }
+
+    #perfil-profesional p{
+        width: 50vw;
+        margin-top: 25px;
+        margin-bottom: 0.5vw;
+        font-size: 1.7rem;
+        line-height: 3rem;
+    }
+
+    .foto-hdv{
+        width: 25vw;
+        margin-top: 55px;
+    }
+
+    #contenedor-foto-hdv figure{
+        margin: 0 auto;
+    }
+
+    
+    /* SECCIÓN LISTA DE HABILIDADES */
+
+    .lista-habilidades{
+        width: 100vw;
+    }
+
+    .lista-habilidades ul{
+        font-size: 4rem;
+        line-height: 7rem;
+        /* margin-top: 50px; */
+    }
+
+
+    /* SECCIÓN DE PROYECTOS RECIENTES */
+
+    .proyectos-recientes{
+        width: 100vw;
+    }
+
+    .proyectos-recientes-titulo{
+        width: 95vw;
+    }
+
+    .al-reves{
+        flex-direction: row-reverse;
+    }
+
+    .proyecto-imagen img{
+        width: 35vw;
+    }
+
+    .proyecto-descripcion, .proyecto-imagen{
+        width: 40vw;
+    }
+
+    .proyecto-descripcion h2{
+        font-size: 3rem;
+        line-height: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    .proyecto-descripcion p{
+        width: fit-content;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .alineamiento-derecha{
+        text-align: right;
+    }
+
+    .alineamiento-izquierda{
+        text-align: left;
+    }
+
+    .boton.alineamiento-izquierda{
+        display: block;
+        width:fit-content;
+        margin: 20px auto 20px 0;
+        
+    }
+
+    .boton.alineamiento-derecha{
+        display: block;
+        width: fit-content;
+        margin: 20px 0 20px auto;
+    }
+
+    .contenedor.proyecto{
+        justify-content: space-evenly;
+        padding: 50px 0;
+    }
+
+
+    /* SECCIÓN DEL FOOTER */
+
+    footer{
+        width: 100vw;
+    }
+
+    footer h2{
+        font-size: 4rem;
+        font-weight: lighter;
+    }
+
+}
+
